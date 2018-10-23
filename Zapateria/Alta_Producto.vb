@@ -33,27 +33,27 @@
         Me.ProductosBindingSource.Current("ID_Marca") = ComboBox1.SelectedValue
         Me.ProductosBindingSource.Current("ID_Proveedor") = ComboBox2.SelectedValue
         Me.ProductosBindingSource.Current("Modelo") = ModeloTextBox.Text
-        Me.ProductosBindingSource.Current("Talla") = Val(TallaTextBox.Text)
-        Me.ProductosBindingSource.Current("Precio") = Val(PrecioTextBox.Text)
-        Me.ProductosBindingSource.Current("Color") = ColorTextBox.Text
-        Me.ProductosBindingSource.Current("Estilo") = EstiloTextBox.Text
-        Me.ProductosBindingSource.Current("Stock") = Val(StockTextBox.Text)
+            Me.ProductosBindingSource.Current("Talla") = Val(TallaTextBox.Text)
+            Me.ProductosBindingSource.Current("Precio") = Val(PrecioTextBox.Text)
+            Me.ProductosBindingSource.Current("Color") = ColorTextBox.Text
+            Me.ProductosBindingSource.Current("Estilo") = EstiloTextBox.Text
+            Me.ProductosBindingSource.Current("Stock") = Val(StockTextBox.Text)
 
-        Me.ProductosBindingSource.EndEdit()
-        ' Me.MarcasBindingSource.EndEdit()
+            Me.ProductosBindingSource.EndEdit()
+            ' Me.MarcasBindingSource.EndEdit()
 
-        Me.TableAdapterManager.UpdateAll(Me.ZapateriaDataSet)
-        Me.ProductosTableAdapter.Fill(Me.ZapateriaDataSet.Productos)
-        ' Me.MarcasTableAdapter.Fill(Me.ZapateriaDataSet.Marcas)
+            Me.TableAdapterManager.UpdateAll(Me.ZapateriaDataSet)
+            Me.ProductosTableAdapter.Fill(Me.ZapateriaDataSet.Productos)
+            ' Me.MarcasTableAdapter.Fill(Me.ZapateriaDataSet.Marcas)
 
-        Principal_Producto.ProductosTableAdapter.Fill(Principal_Producto.ZapateriaDataSet.Productos)
-        Buscar_Productos.ProductosTableAdapter.Fill(Buscar_Productos.ZapateriaDataSet.Productos)
+            Principal_Producto.ProductosTableAdapter.Fill(Principal_Producto.ZapateriaDataSet.Productos)
+            Buscar_Productos.ProductosTableAdapter.Fill(Buscar_Productos.ZapateriaDataSet.Productos)
 
-        ' Principal_Producto.MarcasTableAdapter.Fill(Principal_Producto.ZapateriaDataSet.Marcas)
-        Me.ProductosBindingSource.MoveLast() 'muestra el ultimo agregado
-        MsgBox("El ID del producto es:" + Me.ProductosBindingSource.Current("ID_Zap").ToString)
-        Me.ProductosBindingSource.AddNew()
-        'Me.MarcasBindingSource.AddNew()
+            ' Principal_Producto.MarcasTableAdapter.Fill(Principal_Producto.ZapateriaDataSet.Marcas)
+            Me.ProductosBindingSource.MoveLast() 'muestra el ultimo agregado
+            MsgBox("El ID del producto es:" + Me.ProductosBindingSource.Current("ID_Zap").ToString)
+            Me.ProductosBindingSource.AddNew()
+            'Me.MarcasBindingSource.AddNew()
 
     End Sub
 
@@ -87,14 +87,6 @@
         Me.Validate()
         Me.ProductosBindingSource.EndEdit()
         Me.TableAdapterManager.UpdateAll(Me.ZapateriaDataSet)
-
-    End Sub
-
-    Private Sub ComboBox2_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ComboBox2.SelectedIndexChanged
-
-    End Sub
-
-    Private Sub ComboBox1_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ComboBox1.SelectedIndexChanged
 
     End Sub
 End Class

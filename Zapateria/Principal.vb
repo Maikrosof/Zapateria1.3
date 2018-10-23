@@ -268,35 +268,4 @@
     Private Sub LocalidadesToolStripMenuItem5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LocalidadesToolStripMenuItem5.Click
         ElimLoc.Show()
     End Sub
-
-    Private Sub EliminarToolStripMenuItem1_MouseEnter(ByVal sender As Object, ByVal e As System.EventArgs) Handles EliminarToolStripMenuItem1.MouseEnter
-        EliminarToolStripMenuItem1.ForeColor = Color.Black
-    End Sub
-
-    Private Sub EliminarToolStripMenuItem1_MouseLeave(ByVal sender As Object, ByVal e As System.EventArgs) Handles EliminarToolStripMenuItem1.MouseLeave
-        EliminarToolStripMenuItem1.ForeColor = Color.White
-    End Sub
-    Private Sub AgregarToolStripMenuItem1_MouseEnter(ByVal sender As Object, ByVal e As System.EventArgs) Handles AgregarToolStripMenuItem1.MouseEnter
-        AgregarToolStripMenuItem1.ForeColor = Color.Black
-    End Sub
-
-    Private Sub AgregarToolStripMenuItem1_MouseLeave(ByVal sender As Object, ByVal e As System.EventArgs) Handles AgregarToolStripMenuItem1.MouseLeave
-        AgregarToolStripMenuItem1.ForeColor = Color.White
-    End Sub
-
-
-    Private Sub BuscarToolStripMenuItem1_MouseEnter(ByVal sender As Object, ByVal e As System.EventArgs) Handles BuscarToolStripMenuItem1.MouseEnter
-        BuscarToolStripMenuItem1.ForeColor = Color.Black
-    End Sub
-
-    Private Sub BuscarToolStripMenuItem1_MouseLeave(ByVal sender As Object, ByVal e As System.EventArgs) Handles BuscarToolStripMenuItem1.MouseLeave
-        BuscarToolStripMenuItem1.ForeColor = Color.White
-    End Sub
-    Private Sub ModificarToolStripMenuItem1_MouseEnter(ByVal sender As Object, ByVal e As System.EventArgs) Handles ModificarToolStripMenuItem1.MouseEnter
-        ModificarToolStripMenuItem1.ForeColor = Color.Black
-    End Sub
-
-    Private Sub ModificarToolStripMenuItem1_MouseLeave(ByVal sender As Object, ByVal e As System.EventArgs) Handles ModificarToolStripMenuItem1.MouseLeave
-        ModificarToolStripMenuItem1.ForeColor = Color.White
-    End Sub
 End Class

@@ -64,8 +64,4 @@
         Me.TableAdapterManager.UpdateAll(Me.ZapateriaDataSet)
 
     End Sub
-
-    Private Sub CUITTextBox_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CUITTextBox.TextChanged
-
-    End Sub
 End Class

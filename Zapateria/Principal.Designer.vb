@@ -54,6 +54,7 @@ Partial Class Principal
         Me.EmpleadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LocalidadesToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.MarcasToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ConfiguracionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BuscarToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.PorProductoToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.PorProveedoresToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
@@ -235,7 +236,7 @@ Partial Class Principal
         'MenuStrip1
         '
         Me.MenuStrip1.BackgroundImage = CType(resources.GetObject("MenuStrip1.BackgroundImage"), System.Drawing.Image)
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AgregarToolStripMenuItem1, Me.BuscarToolStripMenuItem1, Me.ModificarToolStripMenuItem1, Me.EliminarToolStripMenuItem1})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AgregarToolStripMenuItem1, Me.BuscarToolStripMenuItem1, Me.ModificarToolStripMenuItem1, Me.EliminarToolStripMenuItem1, Me.ConfiguracionesToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(868, 24)
@@ -255,7 +256,7 @@ Partial Class Principal
         Me.ProductosToolStripMenuItem.BackgroundImage = Global.Zapateria.My.Resources.Resources.images
         Me.ProductosToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.ProductosToolStripMenuItem.Name = "ProductosToolStripMenuItem"
-        Me.ProductosToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
+        Me.ProductosToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.ProductosToolStripMenuItem.Text = "Productos"
         '
         'ProveedoresToolStripMenuItem
@@ -263,7 +264,7 @@ Partial Class Principal
         Me.ProveedoresToolStripMenuItem.BackgroundImage = Global.Zapateria.My.Resources.Resources.images
         Me.ProveedoresToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.ProveedoresToolStripMenuItem.Name = "ProveedoresToolStripMenuItem"
-        Me.ProveedoresToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
+        Me.ProveedoresToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.ProveedoresToolStripMenuItem.Text = "Proveedores"
         '
         'ClientesToolStripMenuItem
@@ -271,7 +272,7 @@ Partial Class Principal
         Me.ClientesToolStripMenuItem.BackgroundImage = Global.Zapateria.My.Resources.Resources.images
         Me.ClientesToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.ClientesToolStripMenuItem.Name = "ClientesToolStripMenuItem"
-        Me.ClientesToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
+        Me.ClientesToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.ClientesToolStripMenuItem.Text = "Clientes"
         '
         'EmpleadosToolStripMenuItem
@@ -279,7 +280,7 @@ Partial Class Principal
         Me.EmpleadosToolStripMenuItem.BackgroundImage = Global.Zapateria.My.Resources.Resources.images
         Me.EmpleadosToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.EmpleadosToolStripMenuItem.Name = "EmpleadosToolStripMenuItem"
-        Me.EmpleadosToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
+        Me.EmpleadosToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.EmpleadosToolStripMenuItem.Text = "Empleados"
         '
         'LocalidadesToolStripMenuItem1
@@ -287,7 +288,7 @@ Partial Class Principal
         Me.LocalidadesToolStripMenuItem1.BackgroundImage = Global.Zapateria.My.Resources.Resources.images
         Me.LocalidadesToolStripMenuItem1.ForeColor = System.Drawing.Color.White
         Me.LocalidadesToolStripMenuItem1.Name = "LocalidadesToolStripMenuItem1"
-        Me.LocalidadesToolStripMenuItem1.Size = New System.Drawing.Size(139, 22)
+        Me.LocalidadesToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
         Me.LocalidadesToolStripMenuItem1.Text = "Localidades"
         '
         'MarcasToolStripMenuItem1
@@ -295,8 +296,15 @@ Partial Class Principal
         Me.MarcasToolStripMenuItem1.BackgroundImage = Global.Zapateria.My.Resources.Resources.images
         Me.MarcasToolStripMenuItem1.ForeColor = System.Drawing.Color.White
         Me.MarcasToolStripMenuItem1.Name = "MarcasToolStripMenuItem1"
-        Me.MarcasToolStripMenuItem1.Size = New System.Drawing.Size(139, 22)
+        Me.MarcasToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
         Me.MarcasToolStripMenuItem1.Text = "Marcas"
+        '
+        'ConfiguracionesToolStripMenuItem
+        '
+        Me.ConfiguracionesToolStripMenuItem.ForeColor = System.Drawing.Color.White
+        Me.ConfiguracionesToolStripMenuItem.Name = "ConfiguracionesToolStripMenuItem"
+        Me.ConfiguracionesToolStripMenuItem.Size = New System.Drawing.Size(106, 20)
+        Me.ConfiguracionesToolStripMenuItem.Text = "Configuraciones"
         '
         'BuscarToolStripMenuItem1
         '
@@ -359,7 +367,7 @@ Partial Class Principal
         Me.ProveedoresToolStripMenuItem3.BackgroundImage = Global.Zapateria.My.Resources.Resources.images
         Me.ProveedoresToolStripMenuItem3.ForeColor = System.Drawing.Color.White
         Me.ProveedoresToolStripMenuItem3.Name = "ProveedoresToolStripMenuItem3"
-        Me.ProveedoresToolStripMenuItem3.Size = New System.Drawing.Size(152, 22)
+        Me.ProveedoresToolStripMenuItem3.Size = New System.Drawing.Size(139, 22)
         Me.ProveedoresToolStripMenuItem3.Text = "Proveedores"
         '
         'ClientesToolStripMenuItem3
@@ -367,7 +375,7 @@ Partial Class Principal
         Me.ClientesToolStripMenuItem3.BackgroundImage = CType(resources.GetObject("ClientesToolStripMenuItem3.BackgroundImage"), System.Drawing.Image)
         Me.ClientesToolStripMenuItem3.ForeColor = System.Drawing.Color.White
         Me.ClientesToolStripMenuItem3.Name = "ClientesToolStripMenuItem3"
-        Me.ClientesToolStripMenuItem3.Size = New System.Drawing.Size(152, 22)
+        Me.ClientesToolStripMenuItem3.Size = New System.Drawing.Size(139, 22)
         Me.ClientesToolStripMenuItem3.Text = "Clientes"
         '
         'EmpleadosToolStripMenuItem3
@@ -375,7 +383,7 @@ Partial Class Principal
         Me.EmpleadosToolStripMenuItem3.BackgroundImage = CType(resources.GetObject("EmpleadosToolStripMenuItem3.BackgroundImage"), System.Drawing.Image)
         Me.EmpleadosToolStripMenuItem3.ForeColor = System.Drawing.Color.White
         Me.EmpleadosToolStripMenuItem3.Name = "EmpleadosToolStripMenuItem3"
-        Me.EmpleadosToolStripMenuItem3.Size = New System.Drawing.Size(152, 22)
+        Me.EmpleadosToolStripMenuItem3.Size = New System.Drawing.Size(139, 22)
         Me.EmpleadosToolStripMenuItem3.Text = "Empleados"
         '
         'LocalidadesToolStripMenuItem4
@@ -383,13 +391,12 @@ Partial Class Principal
         Me.LocalidadesToolStripMenuItem4.BackgroundImage = CType(resources.GetObject("LocalidadesToolStripMenuItem4.BackgroundImage"), System.Drawing.Image)
         Me.LocalidadesToolStripMenuItem4.ForeColor = System.Drawing.Color.White
         Me.LocalidadesToolStripMenuItem4.Name = "LocalidadesToolStripMenuItem4"
-        Me.LocalidadesToolStripMenuItem4.Size = New System.Drawing.Size(152, 22)
+        Me.LocalidadesToolStripMenuItem4.Size = New System.Drawing.Size(139, 22)
         Me.LocalidadesToolStripMenuItem4.Text = "Localidades"
         '
         'EliminarToolStripMenuItem1
         '
         Me.EliminarToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LocalidadesToolStripMenuItem5})
-        Me.EliminarToolStripMenuItem1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.EliminarToolStripMenuItem1.ForeColor = System.Drawing.Color.White
         Me.EliminarToolStripMenuItem1.Name = "EliminarToolStripMenuItem1"
         Me.EliminarToolStripMenuItem1.Size = New System.Drawing.Size(62, 20)
@@ -471,6 +478,7 @@ Partial Class Principal
     Friend WithEvents VentasBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents VentasTableAdapter As Zapateria.ZapateriaDataSetTableAdapters.VentasTableAdapter
     Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
+    Friend WithEvents ConfiguracionesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents AgregarToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ProductosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem

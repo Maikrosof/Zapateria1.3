@@ -85,7 +85,7 @@
             ModClient.Show()
         End If
         If e.KeyCode = Keys.F4 Then
-            Call Form1.Show()
+            Call BuscarCli.Show()
         End If
         If e.KeyCode = Keys.Escape Then
             Call BtnVolver_Click(sender, e)
@@ -98,7 +98,7 @@
     End Sub
 
     Private Sub BtnBuscar_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnBuscar.Click
-        Form1.Show()
+        BuscarCli.Show()
 
     End Sub
 
