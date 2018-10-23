@@ -225,7 +225,6 @@ Partial Class AltaCli
         '
         Me.TelefonoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClientesBindingSource, "Telefono", True))
         Me.TelefonoTextBox.Location = New System.Drawing.Point(115, 208)
-        Me.TelefonoTextBox.MaxLength = 8
         Me.TelefonoTextBox.Name = "TelefonoTextBox"
         Me.TelefonoTextBox.Size = New System.Drawing.Size(200, 20)
         Me.TelefonoTextBox.TabIndex = 16
@@ -234,7 +233,6 @@ Partial Class AltaCli
         '
         Me.DNITextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClientesBindingSource, "DNI", True))
         Me.DNITextBox.Location = New System.Drawing.Point(115, 234)
-        Me.DNITextBox.MaxLength = 8
         Me.DNITextBox.Name = "DNITextBox"
         Me.DNITextBox.Size = New System.Drawing.Size(200, 20)
         Me.DNITextBox.TabIndex = 18

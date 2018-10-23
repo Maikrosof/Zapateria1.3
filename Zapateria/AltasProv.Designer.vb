@@ -37,24 +37,24 @@ Partial Class AltasProv
         Me.BtnGuardar = New System.Windows.Forms.Button()
         Me.BtnVolver = New System.Windows.Forms.Button()
         Me.CmbLocalidad = New System.Windows.Forms.ComboBox()
-        Me.LocalidadBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.ZapateriaDataSet = New Zapateria.ZapateriaDataSet()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.CUITTextBox = New System.Windows.Forms.TextBox()
+        Me.ZapateriaDataSet = New Zapateria.ZapateriaDataSet()
         Me.ProveedoresBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ProveedoresTableAdapter = New Zapateria.ZapateriaDataSetTableAdapters.ProveedoresTableAdapter()
         Me.TableAdapterManager = New Zapateria.ZapateriaDataSetTableAdapters.TableAdapterManager()
         Me.LocalidadTableAdapter = New Zapateria.ZapateriaDataSetTableAdapters.LocalidadTableAdapter()
+        Me.LocalidadBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         ID_LocalidadLabel = New System.Windows.Forms.Label()
         Razon_SocialLabel = New System.Windows.Forms.Label()
         DireccionLabel = New System.Windows.Forms.Label()
         NroLabel = New System.Windows.Forms.Label()
         TelefonoLabel = New System.Windows.Forms.Label()
         CUITLabel = New System.Windows.Forms.Label()
-        CType(Me.LocalidadBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ZapateriaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProveedoresBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LocalidadBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ID_LocalidadLabel
@@ -147,7 +147,6 @@ Partial Class AltasProv
         'TelefonoTextBox
         '
         Me.TelefonoTextBox.Location = New System.Drawing.Point(105, 209)
-        Me.TelefonoTextBox.MaxLength = 8
         Me.TelefonoTextBox.Name = "TelefonoTextBox"
         Me.TelefonoTextBox.Size = New System.Drawing.Size(121, 20)
         Me.TelefonoTextBox.TabIndex = 6
@@ -179,23 +178,13 @@ Partial Class AltasProv
         'CmbLocalidad
         '
         Me.CmbLocalidad.DataSource = Me.LocalidadBindingSource
-        Me.CmbLocalidad.DisplayMember = "Localidad"
+        Me.CmbLocalidad.DisplayMember = "ID_Localidad"
         Me.CmbLocalidad.FormattingEnabled = True
         Me.CmbLocalidad.Location = New System.Drawing.Point(105, 79)
         Me.CmbLocalidad.Name = "CmbLocalidad"
         Me.CmbLocalidad.Size = New System.Drawing.Size(121, 21)
         Me.CmbLocalidad.TabIndex = 1
         Me.CmbLocalidad.ValueMember = "ID_Localidad"
-        '
-        'LocalidadBindingSource
-        '
-        Me.LocalidadBindingSource.DataMember = "Localidad"
-        Me.LocalidadBindingSource.DataSource = Me.ZapateriaDataSet
-        '
-        'ZapateriaDataSet
-        '
-        Me.ZapateriaDataSet.DataSetName = "ZapateriaDataSet"
-        Me.ZapateriaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'Label1
         '
@@ -224,10 +213,14 @@ Partial Class AltasProv
         'CUITTextBox
         '
         Me.CUITTextBox.Location = New System.Drawing.Point(105, 131)
-        Me.CUITTextBox.MaxLength = 11
         Me.CUITTextBox.Name = "CUITTextBox"
         Me.CUITTextBox.Size = New System.Drawing.Size(121, 20)
         Me.CUITTextBox.TabIndex = 3
+        '
+        'ZapateriaDataSet
+        '
+        Me.ZapateriaDataSet.DataSetName = "ZapateriaDataSet"
+        Me.ZapateriaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'ProveedoresBindingSource
         '
@@ -253,6 +246,11 @@ Partial Class AltasProv
         'LocalidadTableAdapter
         '
         Me.LocalidadTableAdapter.ClearBeforeFill = True
+        '
+        'LocalidadBindingSource
+        '
+        Me.LocalidadBindingSource.DataMember = "Localidad"
+        Me.LocalidadBindingSource.DataSource = Me.ZapateriaDataSet
         '
         'AltasProv
         '
@@ -280,9 +278,9 @@ Partial Class AltasProv
         Me.KeyPreview = True
         Me.Name = "AltasProv"
         Me.Text = " "
-        CType(Me.LocalidadBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ZapateriaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ProveedoresBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LocalidadBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

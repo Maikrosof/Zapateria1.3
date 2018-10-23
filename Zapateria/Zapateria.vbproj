@@ -173,12 +173,6 @@
     <Compile Include="ElimLoc.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Form1.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="ModClient.Designer.vb">
       <DependentUpon>ModClient.vb</DependentUpon>
     </Compile>
@@ -304,9 +298,6 @@
     <EmbeddedResource Include="ElimLoc.resx">
       <DependentUpon>ElimLoc.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ModClient.resx">
       <DependentUpon>ModClient.vb</DependentUpon>
     </EmbeddedResource>
@@ -371,7 +362,6 @@
     <None Include="Imagenes\images.jpg" />
     <None Include="Imagenes\1.jpg" />
     <None Include="Imagenes\WhatsApp Image 2018-10-17 at 23.13.34.jpeg" />
-    <None Include="Imagenes\icons8-búsqueda-24.png" />
     <Content Include="Zapateria.sdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
