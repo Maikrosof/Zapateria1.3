@@ -299,4 +299,17 @@
     Private Sub ModificarToolStripMenuItem1_MouseLeave(ByVal sender As Object, ByVal e As System.EventArgs) Handles ModificarToolStripMenuItem1.MouseLeave
         ModificarToolStripMenuItem1.ForeColor = Color.White
     End Sub
+
+    Private Sub ConsultaFacturacionToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ConsultaFacturacionToolStripMenuItem.Click
+        ConsultaFact.Show()
+
+    End Sub
+
+    Private Sub ConsultaFacturacionToolStripMenuItem_MouseEnter(ByVal sender As Object, ByVal e As System.EventArgs) Handles ConsultaFacturacionToolStripMenuItem.MouseEnter
+        ConsultaFacturacionToolStripMenuItem.ForeColor = Color.Black
+    End Sub
+
+    Private Sub ConsultaFacturacionToolStripMenuItem_MouseLeave(ByVal sender As Object, ByVal e As System.EventArgs) Handles ConsultaFacturacionToolStripMenuItem.MouseLeave
+        ConsultaFacturacionToolStripMenuItem.ForeColor = Color.White
+    End Sub
 End Class
