@@ -40,6 +40,8 @@ Partial Class AltaCli
         Me.TelefonoTextBox = New System.Windows.Forms.TextBox()
         Me.DNITextBox = New System.Windows.Forms.TextBox()
         Me.CmbLocalidad = New System.Windows.Forms.ComboBox()
+        Me.LocalidadBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ZapateriaDataSet = New Zapateria.ZapateriaDataSet()
         Me.BtnVolver = New System.Windows.Forms.Button()
         Me.BtnGuardar = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -47,12 +49,10 @@ Partial Class AltaCli
         Me.Txb011 = New System.Windows.Forms.TextBox()
         Me.Txb54 = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.ZapateriaDataSet = New Zapateria.ZapateriaDataSet()
         Me.ClientesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ClientesTableAdapter = New Zapateria.ZapateriaDataSetTableAdapters.ClientesTableAdapter()
         Me.TableAdapterManager = New Zapateria.ZapateriaDataSetTableAdapters.TableAdapterManager()
         Me.LocalidadTableAdapter = New Zapateria.ZapateriaDataSetTableAdapters.LocalidadTableAdapter()
-        Me.LocalidadBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         ID_LocalidadLabel = New System.Windows.Forms.Label()
         NombreLabel = New System.Windows.Forms.Label()
         ApellidoLabel = New System.Windows.Forms.Label()
@@ -61,9 +61,9 @@ Partial Class AltaCli
         NroLabel = New System.Windows.Forms.Label()
         TelefonoLabel = New System.Windows.Forms.Label()
         DNILabel = New System.Windows.Forms.Label()
+        CType(Me.LocalidadBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ZapateriaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ClientesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LocalidadBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ID_LocalidadLabel
@@ -207,13 +207,24 @@ Partial Class AltaCli
         '
         'CmbLocalidad
         '
-        Me.CmbLocalidad.DisplayMember = "ID_Localidad"
+        Me.CmbLocalidad.DataSource = Me.LocalidadBindingSource
+        Me.CmbLocalidad.DisplayMember = "Localidad"
         Me.CmbLocalidad.FormattingEnabled = True
         Me.CmbLocalidad.Location = New System.Drawing.Point(115, 52)
         Me.CmbLocalidad.Name = "CmbLocalidad"
         Me.CmbLocalidad.Size = New System.Drawing.Size(200, 21)
         Me.CmbLocalidad.TabIndex = 19
         Me.CmbLocalidad.ValueMember = "ID_Localidad"
+        '
+        'LocalidadBindingSource
+        '
+        Me.LocalidadBindingSource.DataMember = "Localidad"
+        Me.LocalidadBindingSource.DataSource = Me.ZapateriaDataSet
+        '
+        'ZapateriaDataSet
+        '
+        Me.ZapateriaDataSet.DataSetName = "ZapateriaDataSet"
+        Me.ZapateriaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'BtnVolver
         '
@@ -289,11 +300,6 @@ Partial Class AltaCli
         Me.Label2.TabIndex = 29
         Me.Label2.Text = "+"
         '
-        'ZapateriaDataSet
-        '
-        Me.ZapateriaDataSet.DataSetName = "ZapateriaDataSet"
-        Me.ZapateriaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'ClientesBindingSource
         '
         Me.ClientesBindingSource.DataMember = "Clientes"
@@ -319,18 +325,13 @@ Partial Class AltaCli
         '
         Me.LocalidadTableAdapter.ClearBeforeFill = True
         '
-        'LocalidadBindingSource
-        '
-        Me.LocalidadBindingSource.DataMember = "Localidad"
-        Me.LocalidadBindingSource.DataSource = Me.ZapateriaDataSet
-        '
         'AltaCli
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ButtonShadow
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(359, 336)
+        Me.ClientSize = New System.Drawing.Size(354, 330)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Txb54)
         Me.Controls.Add(Me.Txb011)
@@ -357,9 +358,9 @@ Partial Class AltaCli
         Me.KeyPreview = True
         Me.Name = "AltaCli"
         Me.Text = "AltaCli"
+        CType(Me.LocalidadBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ZapateriaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ClientesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LocalidadBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

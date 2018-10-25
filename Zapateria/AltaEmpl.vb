@@ -132,4 +132,13 @@
             sender.selectall()
         End If
     End Sub
+
+    Private Sub TelefonoTextBox_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TelefonoTextBox.KeyPress
+        If Char.IsLetter(e.KeyChar) Then
+            e.Handled = True
+            MessageBox.Show("No se permiten letras")
+            sender.focus()
+            sender.selectall()
+        End If
+    End Sub
 End Class

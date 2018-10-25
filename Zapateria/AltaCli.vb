@@ -16,6 +16,10 @@
         Me.LocalidadTableAdapter.Fill(Me.ZapateriaDataSet.Localidad)
         'TODO: esta línea de código carga datos en la tabla 'ZapateriaDataSet.Clientes' Puede moverla o quitarla según sea necesario.
         Me.ClientesTableAdapter.Fill(Me.ZapateriaDataSet.Clientes)
+        'TODO: esta línea de código carga datos en la tabla 'ZapateriaDataSet.Localidad' Puede moverla o quitarla según sea necesario.
+        Me.LocalidadTableAdapter.Fill(Me.ZapateriaDataSet.Localidad)
+        'TODO: esta línea de código carga datos en la tabla 'ZapateriaDataSet.Clientes' Puede moverla o quitarla según sea necesario.
+        Me.ClientesTableAdapter.Fill(Me.ZapateriaDataSet.Clientes)
         Me.ClientesBindingSource.AddNew()
     End Sub
 
@@ -103,10 +107,6 @@
         End If
     End Sub
 
-    Private Sub DNITextBox_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DNITextBox.TextChanged
-
-    End Sub
-
     Private Sub ClientesBindingNavigatorSaveItem_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Me.Validate()
         Me.ClientesBindingSource.EndEdit()
@@ -130,5 +130,25 @@
             sender.focus()
             sender.selectall()
         End If
+    End Sub
+
+    Private Sub ClientesBindingNavigatorSaveItem_Click_2(ByVal sender As System.Object, ByVal e As System.EventArgs)
+        Me.Validate()
+        Me.ClientesBindingSource.EndEdit()
+        Me.TableAdapterManager.UpdateAll(Me.ZapateriaDataSet)
+
+    End Sub
+
+    Private Sub DNITextBox_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles DNITextBox.KeyPress
+        If Char.IsLetter(e.KeyChar) Then
+            e.Handled = True
+            MessageBox.Show("No se permiten letras")
+            sender.focus()
+            sender.selectall()
+        End If
+    End Sub
+
+    Private Sub NroTextBox_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles NroTextBox.TextChanged
+
     End Sub
 End Class

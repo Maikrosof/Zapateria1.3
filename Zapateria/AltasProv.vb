@@ -83,7 +83,7 @@
         End If
     End Sub
 
-    Private Sub NroTextBox_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
+    Private Sub TelefonoTextBox_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
         If Char.IsLetter(e.KeyChar) Then
             e.Handled = True
             MessageBox.Show("No se permiten letras")
@@ -92,7 +92,7 @@
         End If
     End Sub
 
-    Private Sub TelefonoTextBox_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
+    Private Sub NroTextBox_KeyPress1(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles NroTextBox.KeyPress
         If Char.IsLetter(e.KeyChar) Then
             e.Handled = True
             MessageBox.Show("No se permiten letras")
