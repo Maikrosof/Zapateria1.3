@@ -49,6 +49,8 @@ Partial Class BuscarCli
         Me.TextBox9 = New System.Windows.Forms.TextBox()
         Me.BtnVolver = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.TextBox10 = New System.Windows.Forms.TextBox()
+        Me.TextBox11 = New System.Windows.Forms.TextBox()
         ID_ClienteLabel = New System.Windows.Forms.Label()
         ID_LocalidadLabel = New System.Windows.Forms.Label()
         NombreLabel = New System.Windows.Forms.Label()
@@ -189,58 +191,58 @@ Partial Class BuscarCli
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(120, 55)
+        Me.TextBox1.Location = New System.Drawing.Point(119, 55)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox1.Size = New System.Drawing.Size(122, 20)
         Me.TextBox1.TabIndex = 18
         '
         'TextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(120, 81)
+        Me.TextBox2.Location = New System.Drawing.Point(119, 81)
         Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox2.Size = New System.Drawing.Size(122, 20)
         Me.TextBox2.TabIndex = 19
         '
         'TextBox3
         '
-        Me.TextBox3.Location = New System.Drawing.Point(120, 107)
+        Me.TextBox3.Location = New System.Drawing.Point(119, 107)
         Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox3.Size = New System.Drawing.Size(122, 20)
         Me.TextBox3.TabIndex = 20
         '
         'TextBox4
         '
-        Me.TextBox4.Location = New System.Drawing.Point(120, 133)
+        Me.TextBox4.Location = New System.Drawing.Point(119, 133)
         Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox4.Size = New System.Drawing.Size(122, 20)
         Me.TextBox4.TabIndex = 21
         '
         'TextBox5
         '
-        Me.TextBox5.Location = New System.Drawing.Point(120, 159)
+        Me.TextBox5.Location = New System.Drawing.Point(119, 159)
         Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox5.Size = New System.Drawing.Size(122, 20)
         Me.TextBox5.TabIndex = 22
         '
         'TextBox6
         '
-        Me.TextBox6.Location = New System.Drawing.Point(120, 186)
+        Me.TextBox6.Location = New System.Drawing.Point(119, 186)
         Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox6.Size = New System.Drawing.Size(122, 20)
         Me.TextBox6.TabIndex = 23
         '
         'TextBox7
         '
-        Me.TextBox7.Location = New System.Drawing.Point(120, 212)
+        Me.TextBox7.Location = New System.Drawing.Point(119, 212)
         Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox7.Size = New System.Drawing.Size(122, 20)
         Me.TextBox7.TabIndex = 24
         '
         'TextBox8
         '
-        Me.TextBox8.Location = New System.Drawing.Point(120, 238)
+        Me.TextBox8.Location = New System.Drawing.Point(183, 238)
         Me.TextBox8.Name = "TextBox8"
-        Me.TextBox8.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox8.Size = New System.Drawing.Size(58, 20)
         Me.TextBox8.TabIndex = 25
         '
         'BtnBuscar
@@ -257,9 +259,9 @@ Partial Class BuscarCli
         '
         'TextBox9
         '
-        Me.TextBox9.Location = New System.Drawing.Point(120, 263)
+        Me.TextBox9.Location = New System.Drawing.Point(119, 263)
         Me.TextBox9.Name = "TextBox9"
-        Me.TextBox9.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox9.Size = New System.Drawing.Size(122, 20)
         Me.TextBox9.TabIndex = 27
         '
         'BtnVolver
@@ -285,6 +287,20 @@ Partial Class BuscarCli
         Me.Label1.TabIndex = 29
         Me.Label1.Text = " Busqueda por DNI de Clientes"
         '
+        'TextBox10
+        '
+        Me.TextBox10.Location = New System.Drawing.Point(127, 237)
+        Me.TextBox10.Name = "TextBox10"
+        Me.TextBox10.Size = New System.Drawing.Size(18, 20)
+        Me.TextBox10.TabIndex = 30
+        '
+        'TextBox11
+        '
+        Me.TextBox11.Location = New System.Drawing.Point(151, 237)
+        Me.TextBox11.Name = "TextBox11"
+        Me.TextBox11.Size = New System.Drawing.Size(26, 20)
+        Me.TextBox11.TabIndex = 31
+        '
         'BuscarCli
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -292,6 +308,8 @@ Partial Class BuscarCli
         Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(379, 312)
+        Me.Controls.Add(Me.TextBox11)
+        Me.Controls.Add(Me.TextBox10)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.BtnVolver)
         Me.Controls.Add(Me.TextBox9)
@@ -338,4 +356,6 @@ Partial Class BuscarCli
     Friend WithEvents TextBox9 As System.Windows.Forms.TextBox
     Friend WithEvents BtnVolver As System.Windows.Forms.Button
     Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents TextBox10 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox11 As System.Windows.Forms.TextBox
 End Class

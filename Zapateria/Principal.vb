@@ -238,7 +238,8 @@
     End Sub
 
     Private Sub PorClientesToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PorClientesToolStripMenuItem1.Click
-        BuscarCli.Show()
+        Form1.Show()
+
     End Sub
 
     Private Sub PorEmpleadosToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PorEmpleadosToolStripMenuItem1.Click

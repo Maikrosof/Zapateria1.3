@@ -51,20 +51,24 @@ Partial Class Client
         Me.BtnAtras = New System.Windows.Forms.Button()
         Me.BtnPrimero = New System.Windows.Forms.Button()
         Me.ClientesDataGridView = New System.Windows.Forms.DataGridView()
+        Me.IDClienteDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.IDLocalidadDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ApellidoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FecNacimientoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DireccionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NroDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DNIDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TelefonoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.BtnModificaciones = New System.Windows.Forms.Button()
         Me.BtnEliminar = New System.Windows.Forms.Button()
         Me.BtnBuscar = New System.Windows.Forms.Button()
         Me.BtnVolver = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me._54TextBox = New System.Windows.Forms.TextBox()
+        Me._011TextBox = New System.Windows.Forms.TextBox()
         ID_ClienteLabel = New System.Windows.Forms.Label()
         ID_LocalidadLabel = New System.Windows.Forms.Label()
         NombreLabel = New System.Windows.Forms.Label()
@@ -263,9 +267,9 @@ Partial Class Client
         'TelefonoTextBox
         '
         Me.TelefonoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClientesBindingSource, "Telefono", True))
-        Me.TelefonoTextBox.Location = New System.Drawing.Point(113, 313)
+        Me.TelefonoTextBox.Location = New System.Drawing.Point(207, 313)
         Me.TelefonoTextBox.Name = "TelefonoTextBox"
-        Me.TelefonoTextBox.Size = New System.Drawing.Size(200, 20)
+        Me.TelefonoTextBox.Size = New System.Drawing.Size(106, 20)
         Me.TelefonoTextBox.TabIndex = 42
         '
         'DNITextBox
@@ -325,7 +329,7 @@ Partial Class Client
         Me.ClientesDataGridView.AutoGenerateColumns = False
         Me.ClientesDataGridView.BackgroundColor = System.Drawing.SystemColors.ButtonFace
         Me.ClientesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.ClientesDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn9})
+        Me.ClientesDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IDClienteDataGridViewTextBoxColumn, Me.IDLocalidadDataGridViewTextBoxColumn, Me.NombreDataGridViewTextBoxColumn, Me.ApellidoDataGridViewTextBoxColumn, Me.FecNacimientoDataGridViewTextBoxColumn, Me.DireccionDataGridViewTextBoxColumn, Me.NroDataGridViewTextBoxColumn, Me.DNIDataGridViewTextBoxColumn, Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.TelefonoDataGridViewTextBoxColumn})
         Me.ClientesDataGridView.DataSource = Me.ClientesBindingSource
         Me.ClientesDataGridView.GridColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.ClientesDataGridView.Location = New System.Drawing.Point(324, 112)
@@ -333,60 +337,72 @@ Partial Class Client
         Me.ClientesDataGridView.Size = New System.Drawing.Size(638, 295)
         Me.ClientesDataGridView.TabIndex = 48
         '
+        'IDClienteDataGridViewTextBoxColumn
+        '
+        Me.IDClienteDataGridViewTextBoxColumn.DataPropertyName = "ID_Cliente"
+        Me.IDClienteDataGridViewTextBoxColumn.HeaderText = "ID_Cliente"
+        Me.IDClienteDataGridViewTextBoxColumn.Name = "IDClienteDataGridViewTextBoxColumn"
+        Me.IDClienteDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'IDLocalidadDataGridViewTextBoxColumn
+        '
+        Me.IDLocalidadDataGridViewTextBoxColumn.DataPropertyName = "ID_Localidad"
+        Me.IDLocalidadDataGridViewTextBoxColumn.HeaderText = "ID_Localidad"
+        Me.IDLocalidadDataGridViewTextBoxColumn.Name = "IDLocalidadDataGridViewTextBoxColumn"
+        '
+        'NombreDataGridViewTextBoxColumn
+        '
+        Me.NombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre"
+        Me.NombreDataGridViewTextBoxColumn.HeaderText = "Nombre"
+        Me.NombreDataGridViewTextBoxColumn.Name = "NombreDataGridViewTextBoxColumn"
+        '
+        'ApellidoDataGridViewTextBoxColumn
+        '
+        Me.ApellidoDataGridViewTextBoxColumn.DataPropertyName = "Apellido"
+        Me.ApellidoDataGridViewTextBoxColumn.HeaderText = "Apellido"
+        Me.ApellidoDataGridViewTextBoxColumn.Name = "ApellidoDataGridViewTextBoxColumn"
+        '
+        'FecNacimientoDataGridViewTextBoxColumn
+        '
+        Me.FecNacimientoDataGridViewTextBoxColumn.DataPropertyName = "Fec_Nacimiento"
+        Me.FecNacimientoDataGridViewTextBoxColumn.HeaderText = "Fec_Nacimiento"
+        Me.FecNacimientoDataGridViewTextBoxColumn.Name = "FecNacimientoDataGridViewTextBoxColumn"
+        '
+        'DireccionDataGridViewTextBoxColumn
+        '
+        Me.DireccionDataGridViewTextBoxColumn.DataPropertyName = "Direccion"
+        Me.DireccionDataGridViewTextBoxColumn.HeaderText = "Direccion"
+        Me.DireccionDataGridViewTextBoxColumn.Name = "DireccionDataGridViewTextBoxColumn"
+        '
+        'NroDataGridViewTextBoxColumn
+        '
+        Me.NroDataGridViewTextBoxColumn.DataPropertyName = "Nro"
+        Me.NroDataGridViewTextBoxColumn.HeaderText = "Nro"
+        Me.NroDataGridViewTextBoxColumn.Name = "NroDataGridViewTextBoxColumn"
+        '
+        'DNIDataGridViewTextBoxColumn
+        '
+        Me.DNIDataGridViewTextBoxColumn.DataPropertyName = "DNI"
+        Me.DNIDataGridViewTextBoxColumn.HeaderText = "DNI"
+        Me.DNIDataGridViewTextBoxColumn.Name = "DNIDataGridViewTextBoxColumn"
+        '
         'DataGridViewTextBoxColumn1
         '
-        Me.DataGridViewTextBoxColumn1.DataPropertyName = "ID_Cliente"
-        Me.DataGridViewTextBoxColumn1.HeaderText = "ID_Cliente"
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "54"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "54"
         Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.ReadOnly = True
         '
         'DataGridViewTextBoxColumn2
         '
-        Me.DataGridViewTextBoxColumn2.DataPropertyName = "ID_Localidad"
-        Me.DataGridViewTextBoxColumn2.HeaderText = "ID_Localidad"
+        Me.DataGridViewTextBoxColumn2.DataPropertyName = "011"
+        Me.DataGridViewTextBoxColumn2.HeaderText = "011"
         Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
         '
-        'DataGridViewTextBoxColumn3
+        'TelefonoDataGridViewTextBoxColumn
         '
-        Me.DataGridViewTextBoxColumn3.DataPropertyName = "Nombre"
-        Me.DataGridViewTextBoxColumn3.HeaderText = "Nombre"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        '
-        'DataGridViewTextBoxColumn4
-        '
-        Me.DataGridViewTextBoxColumn4.DataPropertyName = "Apellido"
-        Me.DataGridViewTextBoxColumn4.HeaderText = "Apellido"
-        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
-        '
-        'DataGridViewTextBoxColumn5
-        '
-        Me.DataGridViewTextBoxColumn5.DataPropertyName = "Fec_Nacimiento"
-        Me.DataGridViewTextBoxColumn5.HeaderText = "Fec_Nacimiento"
-        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
-        '
-        'DataGridViewTextBoxColumn6
-        '
-        Me.DataGridViewTextBoxColumn6.DataPropertyName = "Direccion"
-        Me.DataGridViewTextBoxColumn6.HeaderText = "Direccion"
-        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
-        '
-        'DataGridViewTextBoxColumn7
-        '
-        Me.DataGridViewTextBoxColumn7.DataPropertyName = "Nro"
-        Me.DataGridViewTextBoxColumn7.HeaderText = "Nro"
-        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
-        '
-        'DataGridViewTextBoxColumn8
-        '
-        Me.DataGridViewTextBoxColumn8.DataPropertyName = "Telefono"
-        Me.DataGridViewTextBoxColumn8.HeaderText = "Telefono"
-        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
-        '
-        'DataGridViewTextBoxColumn9
-        '
-        Me.DataGridViewTextBoxColumn9.DataPropertyName = "DNI"
-        Me.DataGridViewTextBoxColumn9.HeaderText = "DNI"
-        Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
+        Me.TelefonoDataGridViewTextBoxColumn.DataPropertyName = "Telefono"
+        Me.TelefonoDataGridViewTextBoxColumn.HeaderText = "Telefono"
+        Me.TelefonoDataGridViewTextBoxColumn.Name = "TelefonoDataGridViewTextBoxColumn"
         '
         'BtnModificaciones
         '
@@ -448,12 +464,30 @@ Partial Class Client
         Me.Button1.Text = "Agregar[F1]"
         Me.Button1.UseVisualStyleBackColor = False
         '
+        '_54TextBox
+        '
+        Me._54TextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClientesBindingSource, "54", True))
+        Me._54TextBox.Location = New System.Drawing.Point(113, 313)
+        Me._54TextBox.Name = "_54TextBox"
+        Me._54TextBox.Size = New System.Drawing.Size(32, 20)
+        Me._54TextBox.TabIndex = 54
+        '
+        '_011TextBox
+        '
+        Me._011TextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClientesBindingSource, "011", True))
+        Me._011TextBox.Location = New System.Drawing.Point(151, 313)
+        Me._011TextBox.Name = "_011TextBox"
+        Me._011TextBox.Size = New System.Drawing.Size(50, 20)
+        Me._011TextBox.TabIndex = 55
+        '
         'Client
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(969, 436)
+        Me.ClientSize = New System.Drawing.Size(982, 428)
+        Me.Controls.Add(Me._011TextBox)
+        Me.Controls.Add(Me._54TextBox)
         Me.Controls.Add(Me.BtnModificaciones)
         Me.Controls.Add(Me.BtnEliminar)
         Me.Controls.Add(Me.BtnBuscar)
@@ -510,18 +544,22 @@ Partial Class Client
     Friend WithEvents BtnAtras As System.Windows.Forms.Button
     Friend WithEvents BtnPrimero As System.Windows.Forms.Button
     Friend WithEvents ClientesDataGridView As System.Windows.Forms.DataGridView
-    Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn2 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn3 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn4 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn5 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn6 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn7 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn8 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn9 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents BtnModificaciones As System.Windows.Forms.Button
     Friend WithEvents BtnEliminar As System.Windows.Forms.Button
     Friend WithEvents BtnBuscar As System.Windows.Forms.Button
     Friend WithEvents BtnVolver As System.Windows.Forms.Button
     Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents IDClienteDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents IDLocalidadDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents NombreDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents ApellidoDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents FecNacimientoDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DireccionDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents NroDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DNIDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn2 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents TelefonoDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents _54TextBox As System.Windows.Forms.TextBox
+    Friend WithEvents _011TextBox As System.Windows.Forms.TextBox
 End Class

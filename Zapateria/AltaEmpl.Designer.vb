@@ -45,7 +45,6 @@ Partial Class AltaEmpl
         Me.Fec_NacimientoDateTimePicker = New System.Windows.Forms.DateTimePicker()
         Me.DireccionTextBox = New System.Windows.Forms.TextBox()
         Me.NroTextBox = New System.Windows.Forms.TextBox()
-        Me.TelefonoTextBox = New System.Windows.Forms.TextBox()
         Me.Fec_ContrDateTimePicker = New System.Windows.Forms.DateTimePicker()
         Me.CargoTextBox = New System.Windows.Forms.TextBox()
         Me.LocalidadBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -54,6 +53,9 @@ Partial Class AltaEmpl
         Me.BtnVolver = New System.Windows.Forms.Button()
         Me.CmbLocalidad = New System.Windows.Forms.ComboBox()
         Me.Button3 = New System.Windows.Forms.Button()
+        Me._011TextBox = New System.Windows.Forms.TextBox()
+        Me._54TextBox = New System.Windows.Forms.TextBox()
+        Me.TelefonoTextBox = New System.Windows.Forms.TextBox()
         ID_LocalidadLabel = New System.Windows.Forms.Label()
         DNILabel = New System.Windows.Forms.Label()
         NombreLabel = New System.Windows.Forms.Label()
@@ -213,6 +215,7 @@ Partial Class AltaEmpl
         '
         Me.DNITextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmpleadosBindingSource, "DNI", True))
         Me.DNITextBox.Location = New System.Drawing.Point(167, 125)
+        Me.DNITextBox.MaxLength = 8
         Me.DNITextBox.Name = "DNITextBox"
         Me.DNITextBox.Size = New System.Drawing.Size(200, 20)
         Me.DNITextBox.TabIndex = 6
@@ -257,14 +260,6 @@ Partial Class AltaEmpl
         Me.NroTextBox.Size = New System.Drawing.Size(200, 20)
         Me.NroTextBox.TabIndex = 16
         '
-        'TelefonoTextBox
-        '
-        Me.TelefonoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmpleadosBindingSource, "Telefono", True))
-        Me.TelefonoTextBox.Location = New System.Drawing.Point(167, 281)
-        Me.TelefonoTextBox.Name = "TelefonoTextBox"
-        Me.TelefonoTextBox.Size = New System.Drawing.Size(200, 20)
-        Me.TelefonoTextBox.TabIndex = 18
-        '
         'Fec_ContrDateTimePicker
         '
         Me.Fec_ContrDateTimePicker.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.EmpleadosBindingSource, "Fec_Contr", True))
@@ -279,7 +274,7 @@ Partial Class AltaEmpl
         Me.CargoTextBox.Location = New System.Drawing.Point(167, 333)
         Me.CargoTextBox.Name = "CargoTextBox"
         Me.CargoTextBox.Size = New System.Drawing.Size(200, 20)
-        Me.CargoTextBox.TabIndex = 22
+        Me.CargoTextBox.TabIndex = 21
         '
         'LocalidadBindingSource
         '
@@ -304,7 +299,7 @@ Partial Class AltaEmpl
         Me.BtnGuardar.Location = New System.Drawing.Point(57, 407)
         Me.BtnGuardar.Name = "BtnGuardar"
         Me.BtnGuardar.Size = New System.Drawing.Size(132, 34)
-        Me.BtnGuardar.TabIndex = 24
+        Me.BtnGuardar.TabIndex = 22
         Me.BtnGuardar.Text = "Guardar"
         Me.BtnGuardar.UseVisualStyleBackColor = True
         '
@@ -315,7 +310,7 @@ Partial Class AltaEmpl
         Me.BtnVolver.Location = New System.Drawing.Point(237, 407)
         Me.BtnVolver.Name = "BtnVolver"
         Me.BtnVolver.Size = New System.Drawing.Size(132, 34)
-        Me.BtnVolver.TabIndex = 25
+        Me.BtnVolver.TabIndex = 23
         Me.BtnVolver.Text = "Volver"
         Me.BtnVolver.UseVisualStyleBackColor = True
         '
@@ -340,8 +335,29 @@ Partial Class AltaEmpl
         Me.Button3.Location = New System.Drawing.Point(382, 95)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(24, 25)
-        Me.Button3.TabIndex = 27
+        Me.Button3.TabIndex = 24
         Me.Button3.UseVisualStyleBackColor = False
+        '
+        '_011TextBox
+        '
+        Me._011TextBox.Location = New System.Drawing.Point(205, 281)
+        Me._011TextBox.Name = "_011TextBox"
+        Me._011TextBox.Size = New System.Drawing.Size(50, 20)
+        Me._011TextBox.TabIndex = 18
+        '
+        '_54TextBox
+        '
+        Me._54TextBox.Location = New System.Drawing.Point(167, 281)
+        Me._54TextBox.Name = "_54TextBox"
+        Me._54TextBox.Size = New System.Drawing.Size(32, 20)
+        Me._54TextBox.TabIndex = 17
+        '
+        'TelefonoTextBox
+        '
+        Me.TelefonoTextBox.Location = New System.Drawing.Point(261, 281)
+        Me.TelefonoTextBox.Name = "TelefonoTextBox"
+        Me.TelefonoTextBox.Size = New System.Drawing.Size(106, 20)
+        Me.TelefonoTextBox.TabIndex = 19
         '
         'AltaEmpl
         '
@@ -349,6 +365,9 @@ Partial Class AltaEmpl
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.Zapateria.My.Resources.Resources.WhatsApp_Image_2018_10_17_at_23_13_34
         Me.ClientSize = New System.Drawing.Size(434, 477)
+        Me.Controls.Add(Me._011TextBox)
+        Me.Controls.Add(Me._54TextBox)
+        Me.Controls.Add(Me.TelefonoTextBox)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.CmbLocalidad)
         Me.Controls.Add(Me.BtnVolver)
@@ -368,7 +387,6 @@ Partial Class AltaEmpl
         Me.Controls.Add(NroLabel)
         Me.Controls.Add(Me.NroTextBox)
         Me.Controls.Add(TelefonoLabel)
-        Me.Controls.Add(Me.TelefonoTextBox)
         Me.Controls.Add(Fec_ContrLabel)
         Me.Controls.Add(Me.Fec_ContrDateTimePicker)
         Me.Controls.Add(CargoLabel)
@@ -393,7 +411,6 @@ Partial Class AltaEmpl
     Friend WithEvents Fec_NacimientoDateTimePicker As System.Windows.Forms.DateTimePicker
     Friend WithEvents DireccionTextBox As System.Windows.Forms.TextBox
     Friend WithEvents NroTextBox As System.Windows.Forms.TextBox
-    Friend WithEvents TelefonoTextBox As System.Windows.Forms.TextBox
     Friend WithEvents Fec_ContrDateTimePicker As System.Windows.Forms.DateTimePicker
     Friend WithEvents CargoTextBox As System.Windows.Forms.TextBox
     Friend WithEvents LocalidadTableAdapter As Zapateria.ZapateriaDataSetTableAdapters.LocalidadTableAdapter
@@ -403,4 +420,7 @@ Partial Class AltaEmpl
     Friend WithEvents BtnVolver As System.Windows.Forms.Button
     Friend WithEvents CmbLocalidad As System.Windows.Forms.ComboBox
     Friend WithEvents Button3 As System.Windows.Forms.Button
+    Friend WithEvents _011TextBox As System.Windows.Forms.TextBox
+    Friend WithEvents _54TextBox As System.Windows.Forms.TextBox
+    Friend WithEvents TelefonoTextBox As System.Windows.Forms.TextBox
 End Class

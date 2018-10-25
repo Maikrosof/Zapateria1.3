@@ -32,29 +32,32 @@ Partial Class AltasProv
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AltasProv))
         Me.Razon_SocialTextBox = New System.Windows.Forms.TextBox()
         Me.DireccionTextBox = New System.Windows.Forms.TextBox()
-        Me.NroTextBox = New System.Windows.Forms.TextBox()
-        Me.TelefonoTextBox = New System.Windows.Forms.TextBox()
         Me.BtnGuardar = New System.Windows.Forms.Button()
         Me.BtnVolver = New System.Windows.Forms.Button()
         Me.CmbLocalidad = New System.Windows.Forms.ComboBox()
+        Me.LocalidadBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ZapateriaDataSet = New Zapateria.ZapateriaDataSet()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.CUITTextBox = New System.Windows.Forms.TextBox()
-        Me.ZapateriaDataSet = New Zapateria.ZapateriaDataSet()
         Me.ProveedoresBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ProveedoresTableAdapter = New Zapateria.ZapateriaDataSetTableAdapters.ProveedoresTableAdapter()
         Me.TableAdapterManager = New Zapateria.ZapateriaDataSetTableAdapters.TableAdapterManager()
         Me.LocalidadTableAdapter = New Zapateria.ZapateriaDataSetTableAdapters.LocalidadTableAdapter()
-        Me.LocalidadBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me._011TextBox = New System.Windows.Forms.TextBox()
+        Me._54TextBox = New System.Windows.Forms.TextBox()
+        Me.NroTextBox = New System.Windows.Forms.TextBox()
+        Me.TelefonoTextBox = New System.Windows.Forms.TextBox()
         ID_LocalidadLabel = New System.Windows.Forms.Label()
         Razon_SocialLabel = New System.Windows.Forms.Label()
         DireccionLabel = New System.Windows.Forms.Label()
         NroLabel = New System.Windows.Forms.Label()
         TelefonoLabel = New System.Windows.Forms.Label()
         CUITLabel = New System.Windows.Forms.Label()
+        CType(Me.LocalidadBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ZapateriaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProveedoresBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LocalidadBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ID_LocalidadLabel
@@ -127,29 +130,15 @@ Partial Class AltasProv
         '
         Me.Razon_SocialTextBox.Location = New System.Drawing.Point(105, 105)
         Me.Razon_SocialTextBox.Name = "Razon_SocialTextBox"
-        Me.Razon_SocialTextBox.Size = New System.Drawing.Size(121, 20)
+        Me.Razon_SocialTextBox.Size = New System.Drawing.Size(148, 20)
         Me.Razon_SocialTextBox.TabIndex = 2
         '
         'DireccionTextBox
         '
         Me.DireccionTextBox.Location = New System.Drawing.Point(105, 157)
         Me.DireccionTextBox.Name = "DireccionTextBox"
-        Me.DireccionTextBox.Size = New System.Drawing.Size(121, 20)
+        Me.DireccionTextBox.Size = New System.Drawing.Size(148, 20)
         Me.DireccionTextBox.TabIndex = 4
-        '
-        'NroTextBox
-        '
-        Me.NroTextBox.Location = New System.Drawing.Point(105, 183)
-        Me.NroTextBox.Name = "NroTextBox"
-        Me.NroTextBox.Size = New System.Drawing.Size(121, 20)
-        Me.NroTextBox.TabIndex = 5
-        '
-        'TelefonoTextBox
-        '
-        Me.TelefonoTextBox.Location = New System.Drawing.Point(105, 209)
-        Me.TelefonoTextBox.Name = "TelefonoTextBox"
-        Me.TelefonoTextBox.Size = New System.Drawing.Size(121, 20)
-        Me.TelefonoTextBox.TabIndex = 6
         '
         'BtnGuardar
         '
@@ -159,7 +148,7 @@ Partial Class AltasProv
         Me.BtnGuardar.Location = New System.Drawing.Point(29, 254)
         Me.BtnGuardar.Name = "BtnGuardar"
         Me.BtnGuardar.Size = New System.Drawing.Size(75, 37)
-        Me.BtnGuardar.TabIndex = 7
+        Me.BtnGuardar.TabIndex = 9
         Me.BtnGuardar.Text = "Guardar"
         Me.BtnGuardar.UseVisualStyleBackColor = False
         '
@@ -168,23 +157,33 @@ Partial Class AltasProv
         Me.BtnVolver.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.BtnVolver.BackgroundImage = CType(resources.GetObject("BtnVolver.BackgroundImage"), System.Drawing.Image)
         Me.BtnVolver.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.BtnVolver.Location = New System.Drawing.Point(169, 254)
+        Me.BtnVolver.Location = New System.Drawing.Point(178, 254)
         Me.BtnVolver.Name = "BtnVolver"
         Me.BtnVolver.Size = New System.Drawing.Size(75, 37)
-        Me.BtnVolver.TabIndex = 8
+        Me.BtnVolver.TabIndex = 10
         Me.BtnVolver.Text = "Volver"
         Me.BtnVolver.UseVisualStyleBackColor = False
         '
         'CmbLocalidad
         '
         Me.CmbLocalidad.DataSource = Me.LocalidadBindingSource
-        Me.CmbLocalidad.DisplayMember = "ID_Localidad"
+        Me.CmbLocalidad.DisplayMember = "Localidad"
         Me.CmbLocalidad.FormattingEnabled = True
         Me.CmbLocalidad.Location = New System.Drawing.Point(105, 79)
         Me.CmbLocalidad.Name = "CmbLocalidad"
-        Me.CmbLocalidad.Size = New System.Drawing.Size(121, 21)
+        Me.CmbLocalidad.Size = New System.Drawing.Size(148, 21)
         Me.CmbLocalidad.TabIndex = 1
         Me.CmbLocalidad.ValueMember = "ID_Localidad"
+        '
+        'LocalidadBindingSource
+        '
+        Me.LocalidadBindingSource.DataMember = "Localidad"
+        Me.LocalidadBindingSource.DataSource = Me.ZapateriaDataSet
+        '
+        'ZapateriaDataSet
+        '
+        Me.ZapateriaDataSet.DataSetName = "ZapateriaDataSet"
+        Me.ZapateriaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'Label1
         '
@@ -204,23 +203,19 @@ Partial Class AltasProv
         Me.Button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button3.ForeColor = System.Drawing.SystemColors.Desktop
-        Me.Button3.Location = New System.Drawing.Point(232, 75)
+        Me.Button3.Location = New System.Drawing.Point(259, 76)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(24, 25)
-        Me.Button3.TabIndex = 10
+        Me.Button3.TabIndex = 11
         Me.Button3.UseVisualStyleBackColor = False
         '
         'CUITTextBox
         '
         Me.CUITTextBox.Location = New System.Drawing.Point(105, 131)
+        Me.CUITTextBox.MaxLength = 11
         Me.CUITTextBox.Name = "CUITTextBox"
-        Me.CUITTextBox.Size = New System.Drawing.Size(121, 20)
+        Me.CUITTextBox.Size = New System.Drawing.Size(148, 20)
         Me.CUITTextBox.TabIndex = 3
-        '
-        'ZapateriaDataSet
-        '
-        Me.ZapateriaDataSet.DataSetName = "ZapateriaDataSet"
-        Me.ZapateriaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'ProveedoresBindingSource
         '
@@ -247,10 +242,50 @@ Partial Class AltasProv
         '
         Me.LocalidadTableAdapter.ClearBeforeFill = True
         '
-        'LocalidadBindingSource
+        'Label2
         '
-        Me.LocalidadBindingSource.DataMember = "Localidad"
-        Me.LocalidadBindingSource.DataSource = Me.ZapateriaDataSet
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.Location = New System.Drawing.Point(86, 212)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(13, 13)
+        Me.Label2.TabIndex = 33
+        Me.Label2.Text = "+"
+        '
+        '_011TextBox
+        '
+        Me._011TextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProveedoresBindingSource, "011", True))
+        Me._011TextBox.Location = New System.Drawing.Point(135, 209)
+        Me._011TextBox.MaxLength = 4
+        Me._011TextBox.Name = "_011TextBox"
+        Me._011TextBox.Size = New System.Drawing.Size(36, 20)
+        Me._011TextBox.TabIndex = 7
+        '
+        '_54TextBox
+        '
+        Me._54TextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProveedoresBindingSource, "54", True))
+        Me._54TextBox.Location = New System.Drawing.Point(105, 209)
+        Me._54TextBox.MaxLength = 2
+        Me._54TextBox.Name = "_54TextBox"
+        Me._54TextBox.Size = New System.Drawing.Size(24, 20)
+        Me._54TextBox.TabIndex = 6
+        '
+        'NroTextBox
+        '
+        Me.NroTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProveedoresBindingSource, "Nro", True))
+        Me.NroTextBox.Location = New System.Drawing.Point(105, 183)
+        Me.NroTextBox.Name = "NroTextBox"
+        Me.NroTextBox.Size = New System.Drawing.Size(148, 20)
+        Me.NroTextBox.TabIndex = 5
+        '
+        'TelefonoTextBox
+        '
+        Me.TelefonoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProveedoresBindingSource, "Telefono", True))
+        Me.TelefonoTextBox.Location = New System.Drawing.Point(177, 209)
+        Me.TelefonoTextBox.MaxLength = 8
+        Me.TelefonoTextBox.Name = "TelefonoTextBox"
+        Me.TelefonoTextBox.Size = New System.Drawing.Size(76, 20)
+        Me.TelefonoTextBox.TabIndex = 8
         '
         'AltasProv
         '
@@ -258,7 +293,12 @@ Partial Class AltasProv
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(273, 307)
+        Me.ClientSize = New System.Drawing.Size(293, 311)
+        Me.Controls.Add(Me.TelefonoTextBox)
+        Me.Controls.Add(Me.NroTextBox)
+        Me.Controls.Add(Me._54TextBox)
+        Me.Controls.Add(Me._011TextBox)
+        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(CUITLabel)
         Me.Controls.Add(Me.CUITTextBox)
         Me.Controls.Add(Me.Button3)
@@ -272,23 +312,19 @@ Partial Class AltasProv
         Me.Controls.Add(DireccionLabel)
         Me.Controls.Add(Me.DireccionTextBox)
         Me.Controls.Add(NroLabel)
-        Me.Controls.Add(Me.NroTextBox)
         Me.Controls.Add(TelefonoLabel)
-        Me.Controls.Add(Me.TelefonoTextBox)
         Me.KeyPreview = True
         Me.Name = "AltasProv"
         Me.Text = " "
+        CType(Me.LocalidadBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ZapateriaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ProveedoresBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LocalidadBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
     Friend WithEvents Razon_SocialTextBox As System.Windows.Forms.TextBox
     Friend WithEvents DireccionTextBox As System.Windows.Forms.TextBox
-    Friend WithEvents NroTextBox As System.Windows.Forms.TextBox
-    Friend WithEvents TelefonoTextBox As System.Windows.Forms.TextBox
     Friend WithEvents BtnGuardar As System.Windows.Forms.Button
     Friend WithEvents BtnVolver As System.Windows.Forms.Button
     Friend WithEvents CmbLocalidad As System.Windows.Forms.ComboBox
@@ -301,4 +337,9 @@ Partial Class AltasProv
     Friend WithEvents TableAdapterManager As Zapateria.ZapateriaDataSetTableAdapters.TableAdapterManager
     Friend WithEvents LocalidadTableAdapter As Zapateria.ZapateriaDataSetTableAdapters.LocalidadTableAdapter
     Friend WithEvents LocalidadBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents _011TextBox As System.Windows.Forms.TextBox
+    Friend WithEvents _54TextBox As System.Windows.Forms.TextBox
+    Friend WithEvents NroTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents TelefonoTextBox As System.Windows.Forms.TextBox
 End Class

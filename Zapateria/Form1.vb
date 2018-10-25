@@ -70,4 +70,10 @@
             Ventas.Show()
             Close()
     End Sub
+
+    Private Sub Form1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
+        If e.KeyCode = Keys.Escape Then
+            Call Button1_Click(sender, e)
+        End If
+    End Sub
 End Class

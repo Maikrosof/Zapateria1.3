@@ -30,30 +30,53 @@
     End Sub
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+        If ComboBox1.SelectedValue = Nothing Then
+            MsgBox("Elija una marca")
+            Exit Sub
+        End If
+
+        If ComboBox2.SelectedValue = Nothing Then
+            MsgBox("Elija un proveedor")
+            Exit Sub
+        End If
+
+        If PrecioTextBox.Text = Nothing Then
+            MsgBox("Ingrese el precio")
+            Exit Sub
+        End If
+        If StockTextBox.Text = Nothing Then
+            MsgBox("Ingrese el stock")
+            Exit Sub
+        End If
+        If PrecioTextBox.Text = Nothing Then
+            MsgBox("Ingrese el modelo")
+            Exit Sub
+        End If
+
         Me.ProductosBindingSource.Current("ID_Marca") = ComboBox1.SelectedValue
         Me.ProductosBindingSource.Current("ID_Proveedor") = ComboBox2.SelectedValue
         Me.ProductosBindingSource.Current("Modelo") = ModeloTextBox.Text
-            Me.ProductosBindingSource.Current("Talla") = Val(TallaTextBox.Text)
-            Me.ProductosBindingSource.Current("Precio") = Val(PrecioTextBox.Text)
-            Me.ProductosBindingSource.Current("Color") = ColorTextBox.Text
-            Me.ProductosBindingSource.Current("Estilo") = EstiloTextBox.Text
-            Me.ProductosBindingSource.Current("Stock") = Val(StockTextBox.Text)
+        Me.ProductosBindingSource.Current("Talla") = Val(TallaTextBox.Text)
+        Me.ProductosBindingSource.Current("Precio") = Val(PrecioTextBox.Text)
+        Me.ProductosBindingSource.Current("Color") = ColorTextBox.Text
+        Me.ProductosBindingSource.Current("Estilo") = EstiloTextBox.Text
+        Me.ProductosBindingSource.Current("Stock") = Val(StockTextBox.Text)
 
-            Me.ProductosBindingSource.EndEdit()
-            ' Me.MarcasBindingSource.EndEdit()
+        Me.ProductosBindingSource.EndEdit()
+        ' Me.MarcasBindingSource.EndEdit()
 
-            Me.TableAdapterManager.UpdateAll(Me.ZapateriaDataSet)
-            Me.ProductosTableAdapter.Fill(Me.ZapateriaDataSet.Productos)
-            ' Me.MarcasTableAdapter.Fill(Me.ZapateriaDataSet.Marcas)
+        Me.TableAdapterManager.UpdateAll(Me.ZapateriaDataSet)
+        Me.ProductosTableAdapter.Fill(Me.ZapateriaDataSet.Productos)
+        ' Me.MarcasTableAdapter.Fill(Me.ZapateriaDataSet.Marcas)
 
-            Principal_Producto.ProductosTableAdapter.Fill(Principal_Producto.ZapateriaDataSet.Productos)
-            Buscar_Productos.ProductosTableAdapter.Fill(Buscar_Productos.ZapateriaDataSet.Productos)
+        Principal_Producto.ProductosTableAdapter.Fill(Principal_Producto.ZapateriaDataSet.Productos)
+        Buscar_Productos.ProductosTableAdapter.Fill(Buscar_Productos.ZapateriaDataSet.Productos)
 
-            ' Principal_Producto.MarcasTableAdapter.Fill(Principal_Producto.ZapateriaDataSet.Marcas)
-            Me.ProductosBindingSource.MoveLast() 'muestra el ultimo agregado
-            MsgBox("El ID del producto es:" + Me.ProductosBindingSource.Current("ID_Zap").ToString)
-            Me.ProductosBindingSource.AddNew()
-            'Me.MarcasBindingSource.AddNew()
+        ' Principal_Producto.MarcasTableAdapter.Fill(Principal_Producto.ZapateriaDataSet.Marcas)
+        Me.ProductosBindingSource.MoveLast() 'muestra el ultimo agregado
+        MsgBox("El ID del producto es:" + Me.ProductosBindingSource.Current("ID_Zap").ToString)
+        Me.ProductosBindingSource.AddNew()
+        'Me.MarcasBindingSource.AddNew()
 
     End Sub
 
@@ -88,5 +111,60 @@
         Me.ProductosBindingSource.EndEdit()
         Me.TableAdapterManager.UpdateAll(Me.ZapateriaDataSet)
 
+    End Sub
+
+    Private Sub ComboBox2_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ComboBox2.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub ComboBox1_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ComboBox1.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub ColorTextBox_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles ColorTextBox.KeyPress
+        If Char.IsNumber(e.KeyChar) Then
+            e.Handled = True
+            MessageBox.Show("No se permiten números")
+            sender.focus()
+            sender.selectall()
+        End If
+    End Sub
+
+    Private Sub EstiloTextBox_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles EstiloTextBox.KeyPress
+        If Char.IsNumber(e.KeyChar) Then
+            e.Handled = True
+            MessageBox.Show("No se permiten números")
+            sender.focus()
+            sender.selectall()
+        End If
+    End Sub
+
+    Private Sub TallaTextBox_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TallaTextBox.KeyPress
+        If Char.IsLetter(e.KeyChar) Then
+            e.Handled = True
+            MessageBox.Show("No se permiten letras")
+            sender.focus()
+            sender.selectall()
+        End If
+
+    End Sub
+
+    Private Sub PrecioTextBox_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles PrecioTextBox.KeyPress
+
+        If Char.IsLetter(e.KeyChar) Then
+            e.Handled = True
+            MessageBox.Show("No se permiten letras")
+            sender.focus()
+            sender.selectall()
+        End If
+    End Sub
+
+    Private Sub StockTextBox_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles StockTextBox.KeyPress
+        If Char.IsLetter(e.KeyChar) Then
+            e.Handled = True
+            MessageBox.Show("No se permiten letras")
+            sender.focus()
+            sender.selectall()
+        End If
     End Sub
 End Class

@@ -32,11 +32,6 @@ Partial Class AltaCli
         Dim TelefonoLabel As System.Windows.Forms.Label
         Dim DNILabel As System.Windows.Forms.Label
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AltaCli))
-        Me.ZapateriaDataSet = New Zapateria.ZapateriaDataSet()
-        Me.ClientesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.ClientesTableAdapter = New Zapateria.ZapateriaDataSetTableAdapters.ClientesTableAdapter()
-        Me.TableAdapterManager = New Zapateria.ZapateriaDataSetTableAdapters.TableAdapterManager()
-        Me.LocalidadTableAdapter = New Zapateria.ZapateriaDataSetTableAdapters.LocalidadTableAdapter()
         Me.NombreTextBox = New System.Windows.Forms.TextBox()
         Me.ApellidoTextBox = New System.Windows.Forms.TextBox()
         Me.Fec_NacimientoDateTimePicker = New System.Windows.Forms.DateTimePicker()
@@ -44,12 +39,20 @@ Partial Class AltaCli
         Me.NroTextBox = New System.Windows.Forms.TextBox()
         Me.TelefonoTextBox = New System.Windows.Forms.TextBox()
         Me.DNITextBox = New System.Windows.Forms.TextBox()
-        Me.LocalidadBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.CmbLocalidad = New System.Windows.Forms.ComboBox()
         Me.BtnVolver = New System.Windows.Forms.Button()
         Me.BtnGuardar = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button3 = New System.Windows.Forms.Button()
+        Me.Txb011 = New System.Windows.Forms.TextBox()
+        Me.Txb54 = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.ZapateriaDataSet = New Zapateria.ZapateriaDataSet()
+        Me.ClientesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ClientesTableAdapter = New Zapateria.ZapateriaDataSetTableAdapters.ClientesTableAdapter()
+        Me.TableAdapterManager = New Zapateria.ZapateriaDataSetTableAdapters.TableAdapterManager()
+        Me.LocalidadTableAdapter = New Zapateria.ZapateriaDataSetTableAdapters.LocalidadTableAdapter()
+        Me.LocalidadBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         ID_LocalidadLabel = New System.Windows.Forms.Label()
         NombreLabel = New System.Windows.Forms.Label()
         ApellidoLabel = New System.Windows.Forms.Label()
@@ -151,39 +154,8 @@ Partial Class AltaCli
         DNILabel.TabIndex = 17
         DNILabel.Text = "DNI:"
         '
-        'ZapateriaDataSet
-        '
-        Me.ZapateriaDataSet.DataSetName = "ZapateriaDataSet"
-        Me.ZapateriaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'ClientesBindingSource
-        '
-        Me.ClientesBindingSource.DataMember = "Clientes"
-        Me.ClientesBindingSource.DataSource = Me.ZapateriaDataSet
-        '
-        'ClientesTableAdapter
-        '
-        Me.ClientesTableAdapter.ClearBeforeFill = True
-        '
-        'TableAdapterManager
-        '
-        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager.ClientesTableAdapter = Me.ClientesTableAdapter
-        Me.TableAdapterManager.EmpleadosTableAdapter = Nothing
-        Me.TableAdapterManager.LocalidadTableAdapter = Me.LocalidadTableAdapter
-        Me.TableAdapterManager.MarcasTableAdapter = Nothing
-        Me.TableAdapterManager.ProductosTableAdapter = Nothing
-        Me.TableAdapterManager.ProveedoresTableAdapter = Nothing
-        Me.TableAdapterManager.UpdateOrder = Zapateria.ZapateriaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        Me.TableAdapterManager.VentasTableAdapter = Nothing
-        '
-        'LocalidadTableAdapter
-        '
-        Me.LocalidadTableAdapter.ClearBeforeFill = True
-        '
         'NombreTextBox
         '
-        Me.NombreTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClientesBindingSource, "Nombre", True))
         Me.NombreTextBox.Location = New System.Drawing.Point(115, 78)
         Me.NombreTextBox.Name = "NombreTextBox"
         Me.NombreTextBox.Size = New System.Drawing.Size(200, 20)
@@ -191,7 +163,6 @@ Partial Class AltaCli
         '
         'ApellidoTextBox
         '
-        Me.ApellidoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClientesBindingSource, "Apellido", True))
         Me.ApellidoTextBox.Location = New System.Drawing.Point(115, 104)
         Me.ApellidoTextBox.Name = "ApellidoTextBox"
         Me.ApellidoTextBox.Size = New System.Drawing.Size(200, 20)
@@ -199,7 +170,6 @@ Partial Class AltaCli
         '
         'Fec_NacimientoDateTimePicker
         '
-        Me.Fec_NacimientoDateTimePicker.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.ClientesBindingSource, "Fec_Nacimiento", True))
         Me.Fec_NacimientoDateTimePicker.Location = New System.Drawing.Point(115, 130)
         Me.Fec_NacimientoDateTimePicker.Name = "Fec_NacimientoDateTimePicker"
         Me.Fec_NacimientoDateTimePicker.Size = New System.Drawing.Size(200, 20)
@@ -207,7 +177,6 @@ Partial Class AltaCli
         '
         'DireccionTextBox
         '
-        Me.DireccionTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClientesBindingSource, "Direccion", True))
         Me.DireccionTextBox.Location = New System.Drawing.Point(115, 156)
         Me.DireccionTextBox.Name = "DireccionTextBox"
         Me.DireccionTextBox.Size = New System.Drawing.Size(200, 20)
@@ -215,7 +184,6 @@ Partial Class AltaCli
         '
         'NroTextBox
         '
-        Me.NroTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClientesBindingSource, "Nro", True))
         Me.NroTextBox.Location = New System.Drawing.Point(115, 182)
         Me.NroTextBox.Name = "NroTextBox"
         Me.NroTextBox.Size = New System.Drawing.Size(200, 20)
@@ -223,29 +191,23 @@ Partial Class AltaCli
         '
         'TelefonoTextBox
         '
-        Me.TelefonoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClientesBindingSource, "Telefono", True))
-        Me.TelefonoTextBox.Location = New System.Drawing.Point(115, 208)
+        Me.TelefonoTextBox.Location = New System.Drawing.Point(225, 208)
+        Me.TelefonoTextBox.MaxLength = 8
         Me.TelefonoTextBox.Name = "TelefonoTextBox"
-        Me.TelefonoTextBox.Size = New System.Drawing.Size(200, 20)
-        Me.TelefonoTextBox.TabIndex = 16
+        Me.TelefonoTextBox.Size = New System.Drawing.Size(90, 20)
+        Me.TelefonoTextBox.TabIndex = 17
         '
         'DNITextBox
         '
-        Me.DNITextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClientesBindingSource, "DNI", True))
         Me.DNITextBox.Location = New System.Drawing.Point(115, 234)
+        Me.DNITextBox.MaxLength = 8
         Me.DNITextBox.Name = "DNITextBox"
         Me.DNITextBox.Size = New System.Drawing.Size(200, 20)
         Me.DNITextBox.TabIndex = 18
         '
-        'LocalidadBindingSource
-        '
-        Me.LocalidadBindingSource.DataMember = "Localidad"
-        Me.LocalidadBindingSource.DataSource = Me.ZapateriaDataSet
-        '
         'CmbLocalidad
         '
-        Me.CmbLocalidad.DataSource = Me.LocalidadBindingSource
-        Me.CmbLocalidad.DisplayMember = "Localidad"
+        Me.CmbLocalidad.DisplayMember = "ID_Localidad"
         Me.CmbLocalidad.FormattingEnabled = True
         Me.CmbLocalidad.Location = New System.Drawing.Point(115, 52)
         Me.CmbLocalidad.Name = "CmbLocalidad"
@@ -301,13 +263,77 @@ Partial Class AltaCli
         Me.Button3.TabIndex = 26
         Me.Button3.UseVisualStyleBackColor = False
         '
+        'Txb011
+        '
+        Me.Txb011.Location = New System.Drawing.Point(168, 208)
+        Me.Txb011.MaxLength = 4
+        Me.Txb011.Name = "Txb011"
+        Me.Txb011.Size = New System.Drawing.Size(51, 20)
+        Me.Txb011.TabIndex = 16
+        '
+        'Txb54
+        '
+        Me.Txb54.Location = New System.Drawing.Point(131, 208)
+        Me.Txb54.MaxLength = 2
+        Me.Txb54.Name = "Txb54"
+        Me.Txb54.Size = New System.Drawing.Size(31, 20)
+        Me.Txb54.TabIndex = 15
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.Location = New System.Drawing.Point(112, 211)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(13, 13)
+        Me.Label2.TabIndex = 29
+        Me.Label2.Text = "+"
+        '
+        'ZapateriaDataSet
+        '
+        Me.ZapateriaDataSet.DataSetName = "ZapateriaDataSet"
+        Me.ZapateriaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'ClientesBindingSource
+        '
+        Me.ClientesBindingSource.DataMember = "Clientes"
+        Me.ClientesBindingSource.DataSource = Me.ZapateriaDataSet
+        '
+        'ClientesTableAdapter
+        '
+        Me.ClientesTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.ClientesTableAdapter = Me.ClientesTableAdapter
+        Me.TableAdapterManager.EmpleadosTableAdapter = Nothing
+        Me.TableAdapterManager.LocalidadTableAdapter = Me.LocalidadTableAdapter
+        Me.TableAdapterManager.MarcasTableAdapter = Nothing
+        Me.TableAdapterManager.ProductosTableAdapter = Nothing
+        Me.TableAdapterManager.ProveedoresTableAdapter = Nothing
+        Me.TableAdapterManager.UpdateOrder = Zapateria.ZapateriaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.TableAdapterManager.VentasTableAdapter = Nothing
+        '
+        'LocalidadTableAdapter
+        '
+        Me.LocalidadTableAdapter.ClearBeforeFill = True
+        '
+        'LocalidadBindingSource
+        '
+        Me.LocalidadBindingSource.DataMember = "Localidad"
+        Me.LocalidadBindingSource.DataSource = Me.ZapateriaDataSet
+        '
         'AltaCli
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.BackColor = System.Drawing.SystemColors.ButtonShadow
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(377, 343)
+        Me.ClientSize = New System.Drawing.Size(359, 336)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.Txb54)
+        Me.Controls.Add(Me.Txb011)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.BtnVolver)
@@ -338,10 +364,6 @@ Partial Class AltaCli
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents ZapateriaDataSet As Zapateria.ZapateriaDataSet
-    Friend WithEvents ClientesBindingSource As System.Windows.Forms.BindingSource
-    Friend WithEvents ClientesTableAdapter As Zapateria.ZapateriaDataSetTableAdapters.ClientesTableAdapter
-    Friend WithEvents TableAdapterManager As Zapateria.ZapateriaDataSetTableAdapters.TableAdapterManager
     Friend WithEvents NombreTextBox As System.Windows.Forms.TextBox
     Friend WithEvents ApellidoTextBox As System.Windows.Forms.TextBox
     Friend WithEvents Fec_NacimientoDateTimePicker As System.Windows.Forms.DateTimePicker
@@ -349,11 +371,18 @@ Partial Class AltaCli
     Friend WithEvents NroTextBox As System.Windows.Forms.TextBox
     Friend WithEvents TelefonoTextBox As System.Windows.Forms.TextBox
     Friend WithEvents DNITextBox As System.Windows.Forms.TextBox
-    Friend WithEvents LocalidadTableAdapter As Zapateria.ZapateriaDataSetTableAdapters.LocalidadTableAdapter
-    Friend WithEvents LocalidadBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents CmbLocalidad As System.Windows.Forms.ComboBox
     Friend WithEvents BtnVolver As System.Windows.Forms.Button
     Friend WithEvents BtnGuardar As System.Windows.Forms.Button
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Button3 As System.Windows.Forms.Button
+    Friend WithEvents Txb011 As System.Windows.Forms.TextBox
+    Friend WithEvents Txb54 As System.Windows.Forms.TextBox
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents ZapateriaDataSet As Zapateria.ZapateriaDataSet
+    Friend WithEvents ClientesBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents ClientesTableAdapter As Zapateria.ZapateriaDataSetTableAdapters.ClientesTableAdapter
+    Friend WithEvents TableAdapterManager As Zapateria.ZapateriaDataSetTableAdapters.TableAdapterManager
+    Friend WithEvents LocalidadTableAdapter As Zapateria.ZapateriaDataSetTableAdapters.LocalidadTableAdapter
+    Friend WithEvents LocalidadBindingSource As System.Windows.Forms.BindingSource
 End Class

@@ -20,12 +20,21 @@
     End Sub
 
     Private Sub BtnGuardar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnGuardar.Click
-
+        If CmbLocalidad.SelectedValue = Nothing Then
+            MsgBox("Elija una localidad")
+            Exit Sub
+        End If
+        If CUITTextBox.Text = Nothing Then
+            MsgBox("Ingrese el CUIT")
+            Exit Sub
+        End If
         Me.ProveedoresBindingSource.Current("ID_Localidad") = CmbLocalidad.SelectedValue
         Me.ProveedoresBindingSource.Current("Razon_Social") = Razon_SocialTextBox.Text
         Me.ProveedoresBindingSource.Current("CUIT") = Val(CUITTextBox.Text)
         Me.ProveedoresBindingSource.Current("Direccion") = DireccionTextBox.Text
         Me.ProveedoresBindingSource.Current("Nro") = Val(NroTextBox.Text)
+        Me.ProveedoresBindingSource.Current("54") = Val(_54TextBox.Text)
+        Me.ProveedoresBindingSource.Current("011") = Val(_011TextBox.Text)
         Me.ProveedoresBindingSource.Current("Telefono") = Val(TelefonoTextBox.Text)
         Me.ProveedoresBindingSource.EndEdit()
         Me.TableAdapterManager.UpdateAll(Me.ZapateriaDataSet) 'guardar disco
@@ -63,5 +72,32 @@
         Me.ProveedoresBindingSource.EndEdit()
         Me.TableAdapterManager.UpdateAll(Me.ZapateriaDataSet)
 
+    End Sub
+
+    Private Sub CUITTextBox_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles CUITTextBox.KeyPress
+        If Char.IsLetter(e.KeyChar) Then
+            e.Handled = True
+            MessageBox.Show("No se permiten letras")
+            sender.focus()
+            sender.selectall()
+        End If
+    End Sub
+
+    Private Sub NroTextBox_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
+        If Char.IsLetter(e.KeyChar) Then
+            e.Handled = True
+            MessageBox.Show("No se permiten letras")
+            sender.focus()
+            sender.selectall()
+        End If
+    End Sub
+
+    Private Sub TelefonoTextBox_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
+        If Char.IsLetter(e.KeyChar) Then
+            e.Handled = True
+            MessageBox.Show("No se permiten letras")
+            sender.focus()
+            sender.selectall()
+        End If
     End Sub
 End Class

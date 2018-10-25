@@ -24,6 +24,10 @@
     End Sub
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+        If MarcaTextBox.Text = Nothing Then
+            MsgBox("Ingrese la marca")
+            Exit Sub
+        End If
         Me.Validate()
             Me.MarcasBindingSource.EndEdit()
             Me.TableAdapterManager.UpdateAll(Me.ZapateriaDataSet)
@@ -38,5 +42,22 @@
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
         Close()
 
+    End Sub
+    Private Sub MarcaTextBox_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles MarcaTextBox.KeyPress
+        If Char.IsNumber(e.KeyChar) Then
+            e.Handled = True
+            MessageBox.Show("No se permiten números")
+            sender.focus()
+            sender.selectall()
+        End If
+    End Sub
+
+    Private Sub OrigenTextBox_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles OrigenTextBox.KeyPress
+        If Char.IsNumber(e.KeyChar) Then
+            e.Handled = True
+            MessageBox.Show("No se permiten números")
+            sender.focus()
+            sender.selectall()
+        End If
     End Sub
 End Class

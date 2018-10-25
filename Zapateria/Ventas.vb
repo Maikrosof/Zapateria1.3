@@ -38,6 +38,8 @@
     End Sub
 
     Private Sub Ventas_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        'TODO: esta línea de código carga datos en la tabla 'ZapateriaDataSet.Empleados' Puede moverla o quitarla según sea necesario.
+        Me.EmpleadosTableAdapter.Fill(Me.ZapateriaDataSet.Empleados)
         'TODO: esta línea de código carga datos en la tabla 'ZapateriaDataSet.Productos' Puede moverla o quitarla según sea necesario.
         Me.ProductosTableAdapter.Fill(Me.ZapateriaDataSet.Productos)
         'TODO: esta línea de código carga datos en la tabla 'ZapateriaDataSet.Ventas' Puede moverla o quitarla según sea necesario.
@@ -90,7 +92,7 @@
     End Sub
 
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
-        Dim fila, fila2, CodConsulta, aux As Integer
+        Dim fila, fila2, CodConsulta, client, aux As Integer
         Dim importe, montoabonado As Double
         fila2 = ProductosDataGridView.CurrentCellAddress.Y
         fila = Me.ProductosBindingSource.Find("ID_Zap", ProductosDataGridView.Item(0, fila2).Value()) 'me dice la posicion arranca de 0
@@ -105,16 +107,22 @@
                 If aux = 1 Then
                     If IsNumeric(TextBox5.Text) And Val(TextBox5.Text) > 0 Then
                         importe = TextBox5.Text * Me.ProductosBindingSource.Current("Precio")
-
+                    
+                    client = Val(TextBox6.Text)
+                    If client = -1 Then
+                        MsgBox("ERROR: ID DE CLIENTE INVALIDO")
+                    Else
 
                         If ProductosBindingSource.Current("Stock") >= TextBox5.Text Then 'si true puedo vender
                             montoabonado = Val(InputBox("INGRESE EL MONTO ABONADO"))
                             If montoabonado >= importe Then
                                 Me.VentasBindingSource.AddNew()
+                                Me.VentasBindingSource.Current("ID_Cliente") = client
+                                Me.VentasBindingSource.Current("ID_Emp") = ComboBox1.SelectedValue
                                 Me.VentasBindingSource.Current("ID_Zap") = ProductosBindingSource.Current("ID_Zap")
                                 Me.VentasBindingSource.Current("CantidadVend") = TextBox5.Text
                                 Me.VentasBindingSource.Current("Tot_Fac") = TextBox5.Text * Me.ProductosBindingSource.Current("Precio")
-                                Me.VentasBindingSource.Current("Fecha") = DateTimePicker1.Value
+                                Me.VentasBindingSource.Current("Fecha") = DateTime.Now
                                 Me.VentasBindingSource.EndEdit()
                                 Me.VentasTableAdapter.Update(Me.ZapateriaDataSet.Ventas)
                                 'Me.TableAdapterManager.UpdateAll(Me.FarmaciaDataSet) 'grabo en disco las dos tablas
@@ -145,14 +153,12 @@
                             TextBox1.Focus()
 
                         End If
-
-
-
-                    Else
-                        MsgBox("ERROR: INGRESE LA CANTIDAD DEL PRODUCTO DESEADA")
                     End If
+                Else
+                    MsgBox("ERROR: INGRESE LA CANTIDAD DEL PRODUCTO DESEADA")
                 End If
             End If
+        End If
     End Sub
 
     Private Sub ProductosDataGridView_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs)
@@ -209,6 +215,15 @@
     Private Sub ProductosDataGridView_CellStateChanged(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellStateChangedEventArgs) Handles ProductosDataGridView.CellStateChanged
         low_stock()
         dgv_styleRow()
+
+    End Sub
+
+    Private Sub DateTimePicker1_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
+
+    End Sub
+
+    Private Sub PictureBox1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PictureBox1.Click
+        Form1.Show()
 
     End Sub
 End Class
